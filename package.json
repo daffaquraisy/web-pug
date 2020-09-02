@@ -1,0 +1,20 @@
+{
+  "name": "tugas-5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "daffaquraisy",
+  "license": "ISC",
+  "dependencies": {
+    "formidable": "^1.2.2",
+    "http": "0.0.1-security",
+    "mysql2": "^2.1.0",
+    "node-session": "^1.2.1",
+    "pug": "^3.0.0",
+    "querystring": "^0.2.0",
+    "url": "^0.11.0"
+  }
+}

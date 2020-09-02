@@ -1,0 +1,104 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(content='width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no', name='viewport')
+  title Blank Page &mdash; Stisla
+  link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+  link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.7.2/css/all.css', integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr', crossorigin='anonymous')
+  style
+    include ../assets/css/style.css
+    include ../assets/css/components.css
+  body
+    #app
+    .main-wrapper
+        .navbar-bg
+        nav.navbar.navbar-expand-lg.main-navbar
+            form.form-inline.mr-auto
+                ul.navbar-nav.mr-3
+                    li
+                    a.nav-link.nav-link-lg(href='#', data-toggle='sidebar')
+                        i.fas.fa-bars
+                    li
+                    a.nav-link.nav-link-lg.d-sm-none(href='#', data-toggle='search')
+                        i.fas.fa-search
+                .search-element
+                    input.form-control(type='search', placeholder='Search', aria-label='Search', data-width='250')
+                    button.btn(type='submit')
+                        i.fas.fa-search
+                .search-backdrop
+            ul.navbar-nav.navbar-right
+                li.dropdown
+                    a.nav-link.dropdown-toggle.nav-link-lg.nav-link-user(href='#', data-toggle='dropdown')
+                        img.rounded-circle.mr-1(src='./assets/img/avatar/avatar-1.png')
+                        .d-sm-none.d-lg-inline-block Hi, Ujang Maman
+                    .dropdown-menu.dropdown-menu-right
+                        .dropdown-title Logged in 5 min ago
+                        a.dropdown-item.has-icon(href='features-profile.html')
+                            i.far.fa-user
+                            |  Profile
+                        a.dropdown-item.has-icon(href='features-activities.html')
+                            i.fas.fa-bolt
+                            |  Activities
+                        a.dropdown-item.has-icon(href='features-settings.html')
+                            i.fas.fa-cog
+                            |  Settings
+                        .dropdown-divider
+                        a.dropdown-item.has-icon.text-danger(href='#')
+                            i.fas.fa-sign-out-alt
+                            |  Logout
+        .main-sidebar
+            aside#sidebar-wrapper
+                .sidebar-brand
+                    a(href='index.html') SPP Online
+                .sidebar-brand.sidebar-brand-sm
+                    a(href='index.html') SO
+                ul.sidebar-menu
+                    li.menu-header Starter
+                    li.active
+                        a.nav-link(href='/main')
+                            i.far.fa-square
+                            span
+                                | Dashboard
+                        a.nav-link(href='/users')
+                            i.fas.fa-users
+                            span
+                                | Users
+        .main-content
+            section.section
+                .section-header
+                    h1 User List
+                .section-body
+                    .row
+                        .col-md-12
+                            p
+                                a.btn.btn-primary(href="{{ route('users.create') }}")
+                                    span.glyphicon.glyphicon-plus(aria-hidden='true')
+                                    |  Tambah
+                            .panel.panel-default
+                                .panel-body
+                                    .card
+                                        .card-body
+                                            table#datatable.table.table-hover.text-center(style='width:100%')
+                                                thead
+                                                    tr
+                                                        th(scope='col') ID
+                                                        th(scope='col') Name
+                                                        th(scope='col') Password
+                                                tbody
+                                                each user in users
+                                                    tr
+                                                        td #{user['user_id']}
+                                                        td #{user['user_nama']}
+                                                        td #{user['user_password']}
+        footer.main-footer.fixed-bottom
+            .footer-left
+                | Copyright &copy; 2020 Daffa Quraisy
+script(src='https://code.jquery.com/jquery-3.3.1.min.js', integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=', crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js')
+script
+  include ../assets/js/stisla.js
+  include ../assets/js/scripts.js
+  include ../assets/js/custom.js
