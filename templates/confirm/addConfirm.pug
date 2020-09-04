@@ -2,7 +2,7 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(content='width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no', name='viewport')
-  title Edit Student
+  title Confirm
   link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
   link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.7.2/css/all.css', integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr', crossorigin='anonymous')
   style
@@ -58,73 +58,36 @@ head
                             i.far.fa-square
                             span
                                 | Dashboard
-                        a.nav-link(href='/users')
-                            i.fas.fa-users
-                            span
-                                | Users
-                        a.nav-link(href='/students')
-                            i.fas.fa-users
-                            span
-                                | Students
-                        a.nav-link(href='/invoice')
-                            i.fas.fa-file-invoice
-                            span
-                                | Invoices
-                        a.nav-link(href='/confirm')
-                            i.fas.fa-list
-                            span
-                                | Confirm
-                        a.nav-link(href='/logout')
-                            i.fas.fa-sign-out-alt
-                            span
-                                | Logout
         .main-content
             section.section
                 .section-header
-                    h1 Edit Student
+                    h1 Add Confirm
                 .section-body
                     .row
                         .col-md-12
                                 .card
                                     .card-body
-                                        form.needs-validation(method='POST', action='/edit-student')
+                                        form.needs-validation(method='POST', action='/add-confirm')
                                             .row
                                                 .col-md-6
                                                     .form-group
-                                                    label.control-label(for='') Name
-                                                    input#name.form-control(type='text', name='name', tabindex='1', required='', autofocus='', value=student['name'])
+                                                    label.control-label(for='') Nama
+                                                    input#name.form-control(type='text', name='name', tabindex='1', required='', autofocus='')
                                                 .col-md-6
                                                     .form-group
-                                                    label.control-label(for='') Nis
-                                                    input#nis.form-control(type='number', name='nis', tabindex='1', required='', autofocus='', value=student['nis'])
+                                                    label.control-label(for='') Kelas
+                                                    input#kelas.form-control(type='text', name='kelas', tabindex='1', required='', autofocus='')
                                             
                                             .row
                                                 .col-md-6
                                                     .form-group
-                                                    label.control-label(for='') Nisn
-                                                    input#nisn.form-control(type='number', name='nisn', tabindex='1', required='', autofocus='', value=student['nisn'])
-                                                .col-md-6
-                                                    .form-group
-                                                    label.control-label(for='') Phone
-                                                    input#no_telp.form-control(type='number', name='no_telp', tabindex='1', required='', autofocus='', value=student['no_telp'])
+                                                    label.control-label(for='') Link Image
+                                                    input#link_image.form-control(type='text', name='link_image', tabindex='1', required='', autofocus='')
+
 
                                             .row
-                                                .col-md-6
-                                                    .form-group
-                                                    label.control-label(for='') Address
-                                                    input#address.form-control(type='text', name='address', tabindex='1', required='', autofocus='', value=student['address'])
-                                                .col-md-6
-                                                    .form-group
-                                                    label.control-label(for='') Kelas
-                                                    input#kelas.form-control(type='text', name='kelas', tabindex='1', required='', autofocus='', value=student['kelas'])
-
-                                            .row
-                                                .col-md-6
+                                                .col-md-12.float-right
                                                     input(type="submit", value="Simpan", class="btn btn-primary mt-4")
-                                                .col-md-6
-                                                    .form-group
-                                                    label.control-label(for='') ID
-                                                    input#id.form-control(type='text', name='id', tabindex='1', required='', autofocus='', value=student['id'], readonly="true")
 
 
         footer.main-footer.fixed-bottom

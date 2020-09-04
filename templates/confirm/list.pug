@@ -2,7 +2,7 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(content='width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no', name='viewport')
-  title Edit Student
+  title Confirms
   link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
   link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.7.2/css/all.css', integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr', crossorigin='anonymous')
   style
@@ -29,7 +29,7 @@ head
             ul.navbar-nav.navbar-right
                 li.dropdown
                     a.nav-link.dropdown-toggle.nav-link-lg.nav-link-user(href='#', data-toggle='dropdown')
-                    
+                       
                     .dropdown-menu.dropdown-menu-right
                         .dropdown-title Logged in 5 min ago
                         a.dropdown-item.has-icon(href='features-profile.html')
@@ -81,51 +81,29 @@ head
         .main-content
             section.section
                 .section-header
-                    h1 Edit Student
+                    h1 Confirmation List
                 .section-body
                     .row
                         .col-md-12
-                                .card
-                                    .card-body
-                                        form.needs-validation(method='POST', action='/edit-student')
-                                            .row
-                                                .col-md-6
-                                                    .form-group
-                                                    label.control-label(for='') Name
-                                                    input#name.form-control(type='text', name='name', tabindex='1', required='', autofocus='', value=student['name'])
-                                                .col-md-6
-                                                    .form-group
-                                                    label.control-label(for='') Nis
-                                                    input#nis.form-control(type='number', name='nis', tabindex='1', required='', autofocus='', value=student['nis'])
-                                            
-                                            .row
-                                                .col-md-6
-                                                    .form-group
-                                                    label.control-label(for='') Nisn
-                                                    input#nisn.form-control(type='number', name='nisn', tabindex='1', required='', autofocus='', value=student['nisn'])
-                                                .col-md-6
-                                                    .form-group
-                                                    label.control-label(for='') Phone
-                                                    input#no_telp.form-control(type='number', name='no_telp', tabindex='1', required='', autofocus='', value=student['no_telp'])
-
-                                            .row
-                                                .col-md-6
-                                                    .form-group
-                                                    label.control-label(for='') Address
-                                                    input#address.form-control(type='text', name='address', tabindex='1', required='', autofocus='', value=student['address'])
-                                                .col-md-6
-                                                    .form-group
-                                                    label.control-label(for='') Kelas
-                                                    input#kelas.form-control(type='text', name='kelas', tabindex='1', required='', autofocus='', value=student['kelas'])
-
-                                            .row
-                                                .col-md-6
-                                                    input(type="submit", value="Simpan", class="btn btn-primary mt-4")
-                                                .col-md-6
-                                                    .form-group
-                                                    label.control-label(for='') ID
-                                                    input#id.form-control(type='text', name='id', tabindex='1', required='', autofocus='', value=student['id'], readonly="true")
-
+                            
+                            .panel.panel-default
+                                .panel-body
+                                    .card
+                                        .card-body
+                                            table#datatable.table.table-hover.text-center(style='width:100%')
+                                                thead
+                                                    tr
+                                                        th(scope='col') Nama
+                                                        th(scope='col') Kelas
+                                                        th(scope='col', width='500px') Bukti Konfirmasi
+                                                tbody
+                                                each confirm in confirms
+                                                    tr
+                                                        td #{confirm['name']}
+                                                        td #{confirm['kelas']}
+                                                        td 
+                                                            img(src="https://drive.google.com/uc?export=view&id=" + confirm['link_image'], class="img-fluid w-50")
+                                                            
 
         footer.main-footer.fixed-bottom
             .footer-left

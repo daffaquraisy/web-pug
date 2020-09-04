@@ -2,7 +2,7 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(content='width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no' name='viewport')
-  title Login &mdash; Stisla
+  title Register
   
   link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
   link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr' crossorigin='anonymous')
@@ -17,9 +17,13 @@ head
           .login-brand
           .card.card-primary
             .card-header
-              h4 Login
+              h4 Register
             .card-body
-              form.needs-validation(method='POST',action='/login')
+              form.needs-validation(method='POST',action='/register')
+                .form-group
+                  label(for='user_id') Full Name
+                  input.form-control(type='text', name='user_id')
+                  .invalid-feedback Please fill in your name
                 .form-group
                   label(for='user_nama') Name
                   input.form-control(type='text', name='user_nama')
@@ -32,9 +36,6 @@ head
                   .invalid-feedback please fill in your password
                 .form-group
                   button.btn.btn-primary.btn-lg.btn-block(type='submit', tabindex='4') Login
-                hr
-                .form-group
-                  a.btn.btn-primary.btn-lg.btn-block(href="/register") Register
           .mt-5.text-muted.text-center
           .simple-footer Copyright &copy; Daffa Quraisy
 

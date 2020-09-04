@@ -2,7 +2,7 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(content='width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no', name='viewport')
-  title Blank Page &mdash; Stisla
+  title Main Dashboard
   link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
   link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.7.2/css/all.css', integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr', crossorigin='anonymous')
   style
@@ -62,6 +62,22 @@ head
                             i.fas.fa-users
                             span
                                 | Users
+                        a.nav-link(href='/students')
+                            i.fas.fa-users
+                            span
+                                | Students
+                        a.nav-link(href='/invoice')
+                            i.fas.fa-file-invoice
+                            span
+                                | Invoices
+                        a.nav-link(href='/confirm')
+                            i.fas.fa-list
+                            span
+                                | Confirm
+                        a.nav-link(href='/logout')
+                            i.fas.fa-sign-out-alt
+                            span
+                                | Logout
         .main-content
             section.section
                 .section-header
